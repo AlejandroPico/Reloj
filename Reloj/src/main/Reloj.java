@@ -1,13 +1,16 @@
 package main;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+@SuppressWarnings("serial")
 public class Reloj extends JFrame {
+	
     private JLabel relojDigital;
     private JPanel panelReloj;
     private boolean esDigital = true; // Para alternar entre digital y analógico
@@ -21,9 +24,10 @@ public class Reloj extends JFrame {
         setLayout(new BorderLayout());
 
         // Etiqueta para el reloj digital
+        JPanel panelDigital = new JPanel(new BorderLayout());
         relojDigital = new JLabel("", SwingConstants.CENTER);
-        relojDigital.setFont(new Font("Arial", Font.BOLD, 32));
-        relojDigital.setPreferredSize(new Dimension(400, 100)); // Preferencia de tamaño para centrar
+        relojDigital.setFont(new Font("Arial", Font.BOLD, 72)); // Tamaño de fuente grande para ocupar espacio
+        panelDigital.add(relojDigital, BorderLayout.CENTER); // Añadir reloj al centro del panel
 
         // Panel para mostrar el reloj (digital o analógico)
         panelReloj = new JPanel() {
